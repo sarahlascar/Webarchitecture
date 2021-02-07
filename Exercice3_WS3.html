@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice 3 </title>
+    </head>
+  <body id="demo">
+   
+   
+   <script>  
+        function changeColor(color) 
+        { 
+            document.body.style.background = color; 
+        }
+
+        function removeFirstButton()
+        {
+            var buttons = document.getElementsByTagName('button');
+            buttons[0].parentNode.removeChild( buttons[0]);
+        }
+
+        function Uppercase()
+        {
+            var buttons = document.getElementsByTagName('button');
+            for(i=0;i<buttons.length;i++) {
+                buttons[i].innerText = buttons[i].innerText.toUpperCase();
+        }
+
+        }
+        function Lowercase()
+        {
+            var buttons = document.getElementsByTagName('button');
+            for(i=0;i<buttons.length;i++) {
+                buttons[i].innerText = buttons[i].innerText.toLowerCase();
+        }
+        }
+
+        function disappearOtherButtons(booleen){
+        var buttons = document.getElementsByTagName('button');
+        for(i=0;i<buttons.length-1;i++) {
+          if(booleen==true){
+            document.getElementsByTagName('button')[i].style.visibility = 'hidden';
+          }
+          else{document.getElementsByTagName('button')[i].style.visibility = 'visible';}
+        }
+    }
+
+    function HelloWorld(){
+        var body = document.getElementById('demo').innerHTML;
+        document.getElementById("demo").innerHTML = "<h1 style=\"text-align:center;\"> Hello World </h1>"
+
+    }
+
+
+    function playSound(){
+     
+     var sound = document.getElementById("son");
+     sound.play();
+ }
+    </script> 
+    
+    
+  <p><b>Cliquez sur le bouton pour changer la couleur du background.</b></p> 
+  
+  <button id='First Button' onclick = "changeColor('blue');">Bleu</button>
+  <button onclick = "changeColor('pink');">Rose</button> 
+  <button onclick="removeFirstButton();">remove the first button</button>
+  <button onclick="Uppercase();"> Uppercase all the buttons text</button>
+  <button onclick="Lowercase();">Lowercase all the buttons text</button>
+  <button onclick="HelloWorld();">Write HUGE hello world</button>
+  <audio id="son" src="/Users/sarah/Downloads/MUSCPerc.mp3" controls></audio>  
+
+  <button onmouseover="disappearOtherButtons(true);" onmouseout="disappearOtherButtons(false);" >make disappear all other buttons </button>
+  
+  </body>
+
+</html>
+
